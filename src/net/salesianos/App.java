@@ -100,8 +100,12 @@ public class App {
         System.out.println("Mas horas: " + maxHoras);
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("resumen_videojuegos.txt"))) {
-            bw.write("Resumen generado\n");
-            System.out.println("Escribiendo resumen...");
+            bw.write("=== RESUMEN VIDEOJUEGOS ===\n");
+            bw.write("Total: " + total + "\n");
+            bw.write("Horas totales: " + horasTotales + "\n");
+            bw.write("Media: " + media + "\n");
+            bw.write("Mas horas: " + maxHoras + "\n");
+            System.out.println("Resumen escrito");
         } catch (Exception e) {
             System.out.println("Error escribiendo: " + e.getMessage());
         }
