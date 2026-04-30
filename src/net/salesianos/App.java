@@ -66,7 +66,11 @@ public class App {
         System.out.println("ArrayList de videojuegos creado");
 
         try (BufferedReader br = new BufferedReader(new FileReader("videojuegos.csv"))) {
+            String linea;
             System.out.println("Leyendo archivo CSV...");
+            while ((linea = br.readLine()) != null) {
+                System.out.println("Linea: " + linea);
+            }
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
