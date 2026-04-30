@@ -109,6 +109,13 @@ public class App {
         } catch (Exception e) {
             System.out.println("Error escribiendo: " + e.getMessage());
         }
+
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("log_videojuegos.txt", true))) {
+            bw.write("Proceso completado\n");
+            System.out.println("Log escrito");
+        } catch (Exception e) {
+            System.out.println("Error escribiendo log: " + e.getMessage());
+        }
     }
 
     public static void actividad1() {
