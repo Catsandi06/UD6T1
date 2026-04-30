@@ -1,12 +1,24 @@
 package net.salesianos;
 
 import net.salesianos.reparacion.Reparacion;
+import net.salesianos.asistente.Asistente;
+
+import java.util.*;
 
 import java.util.*;
 
 public class App {
     public static void main(String[] args) {
+        System.out.println("=== ACTIVIDAD 1: GESTION DE REPARACIONES ===\n");
         actividad1();
+
+        System.out.println("\n=== ACTIVIDAD 2: GESTION DE ASISTENTES ===\n");
+        actividad2();
+    }
+
+    public static void actividad2() {
+        HashSet<Asistente> asistentes = new HashSet<>();
+        System.out.println("Conjunto de asistentes creado");
     }
 
     public static void actividad1() {
