@@ -2,6 +2,7 @@ package net.salesianos;
 
 import net.salesianos.reparacion.Reparacion;
 import net.salesianos.asistente.Asistente;
+import net.salesianos.videojuego.Videojuego;
 
 import java.util.*;
 
@@ -14,6 +15,9 @@ public class App {
 
         System.out.println("\n=== ACTIVIDAD 2: GESTION DE ASISTENTES ===\n");
         actividad2();
+
+        System.out.println("\n=== ACTIVIDAD 3: GESTION DE VIDEOJUEGOS ===\n");
+        actividad3();
     }
 
     public static void actividad2() {
@@ -53,6 +57,10 @@ public class App {
         System.out.println("Eliminando ASIR1 si existe...");
 
         System.out.println("Claves del mapa: " + conteo.keySet());
+    }
+
+    public static void actividad3() {
+        System.out.println("Actividad 3 iniciada");
     }
 
     public static void actividad1() {
