@@ -79,6 +79,12 @@ public class App {
 
         int total = videojuegos.size();
         System.out.println("Total videojuegos: " + total);
+
+        int horasTotales = 0;
+        for (Videojuego v : videojuegos) {
+            horasTotales += v.getHorasJugadas();
+        }
+        System.out.println("Total horas: " + horasTotales);
             System.out.println("Error: " + e.getMessage());
         }
     }
