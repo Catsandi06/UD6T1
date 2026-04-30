@@ -33,5 +33,9 @@ public class App {
         System.out.println("Extrayendo de la pila: " + historial.pop());
         System.out.println("Reparaciones pendientes restantes: " + cola.size());
         System.out.println("¿Cola vacia? " + cola.isEmpty());
+
+        System.out.println("\n--- Informacion adicional ---");
+        System.out.println("Total historial: " + historial.size());
+        System.out.println("Elementos en historial: " + historial);
     }
 }
