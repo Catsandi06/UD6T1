@@ -76,6 +76,8 @@ public class App {
                 System.out.println("Anadido: " + datos[0]);
             }
         } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
 
         int total = videojuegos.size();
         System.out.println("Total videojuegos: " + total);
