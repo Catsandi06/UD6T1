@@ -22,4 +22,17 @@ public class Asistente {
     public String toString() {
         return "Asistente [dni=" + dni + ", nombre=" + nombre + ", grupo=" + grupo + "]";
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Asistente asistente = (Asistente) obj;
+        return java.util.Objects.equals(dni, asistente.dni);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(dni);
+    }
 }
