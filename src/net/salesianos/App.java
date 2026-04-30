@@ -33,6 +33,8 @@ public class App {
         for (Asistente a : asistentes) {
             System.out.println(a);
         }
+
+        System.out.println("Total asistentes: " + asistentes.size());
     }
 
     public static void actividad1() {
