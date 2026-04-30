@@ -21,4 +21,9 @@ public class Reparacion {
     public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
     public boolean isUrgente() { return urgente; }
     public void setUrgente(boolean urgente) { this.urgente = urgente; }
+
+    @Override
+    public String toString() {
+        return "Reparacion [codigo=" + codigo + ", cliente=" + cliente + ", descripcion=" + descripcion + ", urgente=" + urgente + "]";
+    }
 }
