@@ -68,8 +68,12 @@ public class App {
         try (BufferedReader br = new BufferedReader(new FileReader("videojuegos.csv"))) {
             String linea;
             System.out.println("Leyendo archivo CSV...");
+            boolean primera = true;
             while ((linea = br.readLine()) != null) {
-                System.out.println("Linea: " + linea);
+                if (primera) { primera = false; continue; }
+                String[] datos = linea.split(",");
+                videojuegos.add(new Videojuego(datos[0], datos[1], Integer.parseInt(datos[2])));
+                System.out.println("Anadido: " + datos[0]);
             }
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
