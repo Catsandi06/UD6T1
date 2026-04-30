@@ -29,5 +29,9 @@ public class App {
         historial.push(cola.poll());
         System.out.println("Atendidas dos reparaciones, guardadas en pila");
         System.out.println("Ultima reparacion atendida: " + historial.peek());
+
+        System.out.println("Extrayendo de la pila: " + historial.pop());
+        System.out.println("Reparaciones pendientes restantes: " + cola.size());
+        System.out.println("¿Cola vacia? " + cola.isEmpty());
     }
 }
