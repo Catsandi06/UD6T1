@@ -21,5 +21,7 @@ public class App {
         for (Reparacion r : cola) {
             System.out.println(r);
         }
+
+        System.out.println("\nPrimera reparacion (peek): " + cola.peek());
     }
 }
