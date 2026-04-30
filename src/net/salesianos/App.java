@@ -85,6 +85,9 @@ public class App {
             horasTotales += v.getHorasJugadas();
         }
         System.out.println("Total horas: " + horasTotales);
+
+        double media = total > 0 ? (double) horasTotales / total : 0;
+        System.out.println("Media horas: " + media);
             System.out.println("Error: " + e.getMessage());
         }
     }
