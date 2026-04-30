@@ -64,6 +64,12 @@ public class App {
 
         ArrayList<Videojuego> videojuegos = new ArrayList<>();
         System.out.println("ArrayList de videojuegos creado");
+
+        try (BufferedReader br = new BufferedReader(new FileReader("videojuegos.csv"))) {
+            System.out.println("Leyendo archivo CSV...");
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
     }
 
     public static void actividad1() {
