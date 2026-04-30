@@ -44,6 +44,8 @@ public class App {
         }
 
         System.out.println("Contenido del HashMap: " + conteo);
+
+        System.out.println("Asistentes en DAM1: " + conteo.getOrDefault("DAM1", 0));
     }
 
     public static void actividad1() {
