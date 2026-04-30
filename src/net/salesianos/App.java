@@ -2,6 +2,7 @@ package net.salesianos;
 
 import net.salesianos.reparacion.Reparacion;
 import net.salesianos.asistente.Asistente;
+import net.salesianos.videojuego.Videojuego;
 
 import java.util.*;
 
@@ -14,6 +15,9 @@ public class App {
 
         System.out.println("\n=== ACTIVIDAD 2: GESTION DE ASISTENTES ===\n");
         actividad2();
+
+        System.out.println("\n=== ACTIVIDAD 3: GESTION DE VIDEOJUEGOS ===\n");
+        actividad3();
     }
 
     public static void actividad2() {
@@ -53,6 +57,65 @@ public class App {
         System.out.println("Eliminando ASIR1 si existe...");
 
         System.out.println("Claves del mapa: " + conteo.keySet());
+    }
+
+    public static void actividad3() {
+        System.out.println("Actividad 3 iniciada");
+
+        ArrayList<Videojuego> videojuegos = new ArrayList<>();
+        System.out.println("ArrayList de videojuegos creado");
+
+        try (BufferedReader br = new BufferedReader(new FileReader("videojuegos.csv"))) {
+            String linea;
+            System.out.println("Leyendo archivo CSV...");
+            boolean primera = true;
+            while ((linea = br.readLine()) != null) {
+                if (primera) { primera = false; continue; }
+                String[] datos = linea.split(",");
+                videojuegos.add(new Videojuego(datos[0], datos[1], Integer.parseInt(datos[2])));
+                System.out.println("Anadido: " + datos[0]);
+            }
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+        int total = videojuegos.size();
+        System.out.println("Total videojuegos: " + total);
+
+        int horasTotales = 0;
+        for (Videojuego v : videojuegos) {
+            horasTotales += v.getHorasJugadas();
+        }
+        System.out.println("Total horas: " + horasTotales);
+
+        double media = total > 0 ? (double) horasTotales / total : 0;
+        System.out.println("Media horas: " + media);
+
+        Videojuego maxHoras = null;
+        for (Videojuego v : videojuegos) {
+            if (maxHoras == null || v.getHorasJugadas() > maxHoras.getHorasJugadas()) {
+                maxHoras = v;
+            }
+        }
+        System.out.println("Mas horas: " + maxHoras);
+
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("resumen_videojuegos.txt"))) {
+            bw.write("=== RESUMEN VIDEOJUEGOS ===\n");
+            bw.write("Total: " + total + "\n");
+            bw.write("Horas totales: " + horasTotales + "\n");
+            bw.write("Media: " + media + "\n");
+            bw.write("Mas horas: " + maxHoras + "\n");
+            System.out.println("Resumen escrito");
+        } catch (Exception e) {
+            System.out.println("Error escribiendo: " + e.getMessage());
+        }
+
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("log_videojuegos.txt", true))) {
+            bw.write("[" + java.time.LocalDateTime.now() + "] Proceso completado\n");
+            System.out.println("Log escrito");
+        } catch (Exception e) {
+            System.out.println("Error escribiendo log: " + e.getMessage());
+        }
     }
 
     public static void actividad1() {
