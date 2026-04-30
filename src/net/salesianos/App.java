@@ -90,8 +90,14 @@ public class App {
 
         double media = total > 0 ? (double) horasTotales / total : 0;
         System.out.println("Media horas: " + media);
-            System.out.println("Error: " + e.getMessage());
+
+        Videojuego maxHoras = null;
+        for (Videojuego v : videojuegos) {
+            if (maxHoras == null || v.getHorasJugadas() > maxHoras.getHorasJugadas()) {
+                maxHoras = v;
+            }
         }
+        System.out.println("Mas horas: " + maxHoras);
     }
 
     public static void actividad1() {
