@@ -16,5 +16,10 @@ public class App {
         cola.add(new Reparacion("R003", "Marta", "Teclado roto", false));
         cola.add(new Reparacion("R004", "Pedro", "Puerto de carga", true));
         System.out.println("Reparaciones anadidas a la cola");
+
+        System.out.println("\nListado de reparaciones:");
+        for (Reparacion r : cola) {
+            System.out.println(r);
+        }
     }
 }
