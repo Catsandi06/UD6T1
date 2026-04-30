@@ -22,4 +22,17 @@ public class Videojuego {
     public String toString() {
         return "Videojuego [titulo=" + titulo + ", genero=" + genero + ", horasJugadas=" + horasJugadas + "]";
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Videojuego videojuego = (Videojuego) obj;
+        return java.util.Objects.equals(titulo, videojuego.titulo);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(titulo);
+    }
 }
