@@ -46,6 +46,13 @@ public class App {
         System.out.println("Contenido del HashMap: " + conteo);
 
         System.out.println("Asistentes en DAM1: " + conteo.getOrDefault("DAM1", 0));
+
+        System.out.println("¿Existe grupo ASIR1? " + conteo.containsKey("ASIR1"));
+
+        conteo.remove("ASIR1");
+        System.out.println("Eliminando ASIR1 si existe...");
+
+        System.out.println("Claves del mapa: " + conteo.keySet());
     }
 
     public static void actividad1() {
