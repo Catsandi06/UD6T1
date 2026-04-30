@@ -111,7 +111,7 @@ public class App {
         }
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("log_videojuegos.txt", true))) {
-            bw.write("Proceso completado\n");
+            bw.write("[" + java.time.LocalDateTime.now() + "] Proceso completado\n");
             System.out.println("Log escrito");
         } catch (Exception e) {
             System.out.println("Error escribiendo log: " + e.getMessage());
