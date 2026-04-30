@@ -35,6 +35,9 @@ public class App {
         }
 
         System.out.println("Total asistentes: " + asistentes.size());
+
+        HashMap<String, Integer> conteo = new HashMap<>();
+        System.out.println("HashMap de conteo creado");
     }
 
     public static void actividad1() {
