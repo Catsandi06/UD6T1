@@ -38,6 +38,10 @@ public class App {
 
         HashMap<String, Integer> conteo = new HashMap<>();
         System.out.println("HashMap de conteo creado");
+
+        for (Asistente a : asistentes) {
+            conteo.put(a.getGrupo(), conteo.getOrDefault(a.getGrupo(), 0) + 1);
+        }
     }
 
     public static void actividad1() {
