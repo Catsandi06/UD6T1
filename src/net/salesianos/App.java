@@ -23,5 +23,10 @@ public class App {
         }
 
         System.out.println("\nPrimera reparacion (peek): " + cola.peek());
+
+        Stack<Reparacion> historial = new Stack<>();
+        historial.push(cola.poll());
+        historial.push(cola.poll());
+        System.out.println("Atendidas dos reparaciones, guardadas en pila");
     }
 }
