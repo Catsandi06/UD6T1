@@ -98,6 +98,13 @@ public class App {
             }
         }
         System.out.println("Mas horas: " + maxHoras);
+
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("resumen_videojuegos.txt"))) {
+            bw.write("Resumen generado\n");
+            System.out.println("Escribiendo resumen...");
+        } catch (Exception e) {
+            System.out.println("Error escribiendo: " + e.getMessage());
+        }
     }
 
     public static void actividad1() {
