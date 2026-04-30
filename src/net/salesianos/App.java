@@ -28,5 +28,6 @@ public class App {
         historial.push(cola.poll());
         historial.push(cola.poll());
         System.out.println("Atendidas dos reparaciones, guardadas en pila");
+        System.out.println("Ultima reparacion atendida: " + historial.peek());
     }
 }
