@@ -1,12 +1,58 @@
 package net.salesianos;
 
 import net.salesianos.reparacion.Reparacion;
+import net.salesianos.asistente.Asistente;
+
+import java.util.*;
 
 import java.util.*;
 
 public class App {
     public static void main(String[] args) {
+        System.out.println("=== ACTIVIDAD 1: GESTION DE REPARACIONES ===\n");
         actividad1();
+
+        System.out.println("\n=== ACTIVIDAD 2: GESTION DE ASISTENTES ===\n");
+        actividad2();
+    }
+
+    public static void actividad2() {
+        HashSet<Asistente> asistentes = new HashSet<>();
+
+        Asistente a1 = new Asistente("111A", "Elena", "DAM1");
+        Asistente a2 = new Asistente("222B", "Hugo", "DAM1");
+        Asistente a3 = new Asistente("333C", "Sara", "DAW1");
+        Asistente a4 = new Asistente("111A", "Elena repetida", "DAM2");
+        asistentes.add(a1);
+        asistentes.add(a2);
+        asistentes.add(a3);
+        asistentes.add(a4);
+        System.out.println("Anadidos 4 asistentes (uno repetido)");
+
+        System.out.println("Contenido del conjunto:");
+        for (Asistente a : asistentes) {
+            System.out.println(a);
+        }
+
+        System.out.println("Total asistentes: " + asistentes.size());
+
+        HashMap<String, Integer> conteo = new HashMap<>();
+        System.out.println("HashMap de conteo creado");
+
+        for (Asistente a : asistentes) {
+            conteo.put(a.getGrupo(), conteo.getOrDefault(a.getGrupo(), 0) + 1);
+        }
+
+        System.out.println("Contenido del HashMap: " + conteo);
+
+        System.out.println("Asistentes en DAM1: " + conteo.getOrDefault("DAM1", 0));
+
+        System.out.println("¿Existe grupo ASIR1? " + conteo.containsKey("ASIR1"));
+
+        conteo.remove("ASIR1");
+        System.out.println("Eliminando ASIR1 si existe...");
+
+        System.out.println("Claves del mapa: " + conteo.keySet());
     }
 
     public static void actividad1() {
@@ -33,5 +79,9 @@ public class App {
         System.out.println("Extrayendo de la pila: " + historial.pop());
         System.out.println("Reparaciones pendientes restantes: " + cola.size());
         System.out.println("¿Cola vacia? " + cola.isEmpty());
+
+        System.out.println("\n--- Informacion adicional ---");
+        System.out.println("Total historial: " + historial.size());
+        System.out.println("Elementos en historial: " + historial);
     }
 }
