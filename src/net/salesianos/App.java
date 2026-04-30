@@ -21,9 +21,13 @@ public class App {
 
         Asistente a1 = new Asistente("111A", "Elena", "DAM1");
         Asistente a2 = new Asistente("222B", "Hugo", "DAM1");
+        Asistente a3 = new Asistente("333C", "Sara", "DAW1");
+        Asistente a4 = new Asistente("111A", "Elena repetida", "DAM2");
         asistentes.add(a1);
         asistentes.add(a2);
-        System.out.println("Anadidos 2 asistentes");
+        asistentes.add(a3);
+        asistentes.add(a4);
+        System.out.println("Anadidos 4 asistentes (uno repetido)");
     }
 
     public static void actividad1() {
