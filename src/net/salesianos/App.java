@@ -18,7 +18,12 @@ public class App {
 
     public static void actividad2() {
         HashSet<Asistente> asistentes = new HashSet<>();
-        System.out.println("Conjunto de asistentes creado");
+
+        Asistente a1 = new Asistente("111A", "Elena", "DAM1");
+        Asistente a2 = new Asistente("222B", "Hugo", "DAM1");
+        asistentes.add(a1);
+        asistentes.add(a2);
+        System.out.println("Anadidos 2 asistentes");
     }
 
     public static void actividad1() {
