@@ -26,4 +26,17 @@ public class Reparacion {
     public String toString() {
         return "Reparacion [codigo=" + codigo + ", cliente=" + cliente + ", descripcion=" + descripcion + ", urgente=" + urgente + "]";
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Reparacion reparacion = (Reparacion) obj;
+        return java.util.Objects.equals(codigo, reparacion.codigo);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(codigo);
+    }
 }
