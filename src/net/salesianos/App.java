@@ -42,6 +42,8 @@ public class App {
         for (Asistente a : asistentes) {
             conteo.put(a.getGrupo(), conteo.getOrDefault(a.getGrupo(), 0) + 1);
         }
+
+        System.out.println("Contenido del HashMap: " + conteo);
     }
 
     public static void actividad1() {
