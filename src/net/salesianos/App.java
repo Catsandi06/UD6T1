@@ -28,6 +28,11 @@ public class App {
         asistentes.add(a3);
         asistentes.add(a4);
         System.out.println("Anadidos 4 asistentes (uno repetido)");
+
+        System.out.println("Contenido del conjunto:");
+        for (Asistente a : asistentes) {
+            System.out.println(a);
+        }
     }
 
     public static void actividad1() {
