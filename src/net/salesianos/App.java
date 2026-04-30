@@ -61,6 +61,9 @@ public class App {
 
     public static void actividad3() {
         System.out.println("Actividad 3 iniciada");
+
+        ArrayList<Videojuego> videojuegos = new ArrayList<>();
+        System.out.println("ArrayList de videojuegos creado");
     }
 
     public static void actividad1() {
